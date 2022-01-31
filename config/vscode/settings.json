@@ -1,0 +1,180 @@
+// {
+//     "glassit.alpha": 225,
+//     "workbench.colorTheme": "Nord",
+//     "editor.minimap.enabled": false,
+//     "window.menuBarVisibility": "toggle",
+//     "files.autoSave": "afterDelay",
+//     "terminal.external.windowsExec": "/home/theuser/.cargo/bin/alacritty",
+//     "terminal.external.linuxExec": "alacritty",
+//     "terminal.integrated.profiles.linux": {
+//         "bash": {
+//             "path": "bash",
+//             "icon": "terminal-bash"
+//         },
+//         "zsh": {
+//             "path": "zsh"
+//         },
+//         "fish": {
+//             "path": "fish"
+//         },
+//         "tmux": {
+//             "path": "tmux",
+//             "icon": "terminal-tmux"
+//         },
+//         "pwsh": {
+//             "path": "pwsh",
+//             "icon": "terminal-powershell"
+//         },
+//         "fish (2)": {
+//             "path": "/bin/fish"
+//         },
+//         "sh": {
+//             "path": "/bin/sh"
+//         }
+//     },
+//     "terminal.integrated.defaultProfile.linux": "fish",
+//     "workbench.iconTheme": "material-icon-theme",
+//     "security.workspace.trust.untrustedFiles": "open",
+//     "[typescriptreact]": {
+//         "editor.defaultFormatter": "esbenp.prettier-vscode"
+//     },
+//     "workbench.editor.untitled.hint": "hidden",
+//     "[typescript]": {
+//         "editor.defaultFormatter": "esbenp.prettier-vscode"
+//     },
+//     "editor.cursorSmoothCaretAnimation": true,
+//     "editor.smoothScrolling": true,
+//     "workbench.list.smoothScrolling": true,
+//     "editor.cursorBlinking": "smooth",
+//     "workbench.editor.openSideBySideDirection": "down",
+//     "workbench.sideBar.location": "right",
+//     "terminal.integrated.fontFamily": "monospace",
+//     "editor.fontSize": 12,
+//     "editor.codeLensFontFamily": "SF Mono",
+//     "editor.fontFamily": "SF Mono",
+//     "editor.fontWeight": "bold",
+//     "editor.letterSpacing": -0.3,
+//     "window.zoomLevel": 1,
+//     "[javascript]": {
+//         "editor.defaultFormatter": "esbenp.prettier-vscode"
+//     }
+// }
+
+{
+  "editor.cursorStyle": "line-thin",
+  "editor.minimap.enabled": false, // removes minimap
+  "editor.scrollbar.horizontal": "hidden",
+  "files.autoSave": "afterDelay",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.renderWhitespace": "none", // removes whitespace chars
+  "editor.renderLineHighlight": "none", // removes line highlight
+  "editor.overviewRulerBorder": false, // removes border from overview ruler (located on the right, same position as the scrollbar)
+  "editor.hideCursorInOverviewRuler": true, // hides cursor mark in the overview ruler
+  "editor.folding": false, // removes the folding feature
+  "editor.occurrencesHighlight": false, // removes highlights occurrences (still works when you select a word)
+  "editor.matchBrackets": "never", // removes the highlight of matching brackets
+  "editor.glyphMargin": false, // removes the space used mainly for debugging indicators
+  "explorer.openEditors.visible": 0, // removes the activity bar
+  "workbench.editor.showIcons": false, // removes icon from opened files in tabs
+  "workbench.editor.tabCloseButton": "off", // removes cross icon from tabs
+  "workbench.statusBar.visible": false, // removes the status bar
+  "window.menuBarVisibility": "toggle",
+  "terminal.integrated.fontFamily": "SF Mono",
+  "editor.fontSize": 14,
+  "editor.letterSpacing": -0.3,
+  "editor.fontFamily": "SF Mono",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": 200,
+  "terminal.integrated.fontWeightBold": "500",
+  "terminal.integrated.cursorWidth": 0.1,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "workbench.panel.defaultLocation": "right", // terminal window position
+  "workbench.panel.opensMaximized": "preserve",
+  "bracketPairColorizer.consecutivePairColors": [
+    "()",
+    "[]",
+    "{}",
+    ["#B48EAD", "#EBCB8B", "#B48EAD"],
+    "Red"
+  ],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+
+  "customizeUI.stylesheet": {
+    "body.inline-title-bar .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container, body.inline-title-bar .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab, body.inline-title-bar .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions": "height:2.3em !important;line-height:2.3em !important",
+    ".tab .tab-label": "line-height:2.3em !important",
+    ".tabs-and-actions-container": "height:2.3em !important",
+    "body.inline-title-bar .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .monaco-icon-label:before": "height:2.28em !important",
+    ".monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions .action-label:not(span), .monaco-workbench .part.editor>.content .editor-group-container>.title .title-actions .action-label:not(span)": "height:1.9em !important"
+  },
+
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "breadcrumbs.enabled": false,
+  "java.project.importHint": false,
+  "maven.terminal.customEnv": [],
+  "java.configuration.maven.userSettings": "~/.m2/settings.xml",
+  "maven.executable.preferMavenWrapper": true,
+  "workbench.startupEditor": "none",
+  "workbench.hover.delay": 200,
+  "workbench.editor.showTabs": false,
+  "prettier.documentSelectors": ["**/*.java", "*.java"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.prettierPath": "/usr/local/lib/node_modules/prettier/",
+  "editor.formatOnSave": true,
+  "java.help.firstView": "none",
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "security.workspace.trust.enabled": false,
+  "C_Cpp.intelliSenseEngineFallback": "Enabled",
+  "settingsSync.ignoredExtensions": [
+    "redhat.java",
+    "vscjava.vscode-maven",
+    "vscjava.vscode-java-dependency",
+    "vscjava.vscode-java-test",
+    "vscjava.vscode-java-pack",
+    "vscjava.vscode-java-debug"
+  ],
+  "scm.diffDecorations": "gutter",
+  "workbench.colorTheme": "Wal",
+  "editor.linkedEditing": true,
+  "update.showReleaseNotes": false,
+  "debug.openDebug": "neverOpen",
+  "workbench.activityBar.visible": false,
+  "scrollFaster.cursorFollowsScroll": true,
+  "scrollFaster.scrollByLines": 8,
+  "window.restoreFullscreen": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "files.associations": {
+    "*.TcPOU": "st"
+  },
+  "importCost.debug": true,
+  "bracketPairColorizer.depreciation-notice": false,
+  "glassit.alpha": 240,
+  "workbench.sideBar.location": "right",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  }
+}
