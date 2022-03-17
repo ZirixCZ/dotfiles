@@ -1,4 +1,4 @@
-# [i3-gaps] stacked monitors rice
+# [i3-gaps] GlossyNeon rice
 
 #### editor: vscode
 #### compositor: picom
