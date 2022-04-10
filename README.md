@@ -1,6 +1,7 @@
 # Oh, hello! 
 ## RosePine
 <img src="https://github.com/ZirixCZ/dotfiles/blob/main/RosePine/vscode.png">
+<img src="https://github.com/ZirixCZ/dotfiles/blob/main/RosePine/tux.png">
 
 ## TokyoNight
 <img src="https://github.com/ZirixCZ/dotfiles/blob/main/TokyoNight/tokyonightscreenshot1.png">
