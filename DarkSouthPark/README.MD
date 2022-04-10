@@ -1,4 +1,4 @@
-# My first rice (not in use right now)
+# My first rice
 
 > System: Manjaro
 
