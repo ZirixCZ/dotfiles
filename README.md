@@ -1,4 +1,5 @@
-# Oh, hello! 
+# hello there! 👋 feeling like ricing today?
+Each of the folders contains their configuration files. Feel free to use them as you wish. If you have any questions, feel free to open an issue or contact me via email.
 ## RosePine
 <img src="https://github.com/ZirixCZ/dotfiles/blob/main/RosePine/vscode.png">
 <img src="https://github.com/ZirixCZ/dotfiles/blob/main/RosePine/tux.png">
