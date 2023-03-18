@@ -6,17 +6,7 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
-
-	use({ "github/copilot.vim", branch = "release" })
-
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	})
-
+	use("github/copilot.vim")
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
@@ -24,9 +14,7 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("folke/tokyonight.nvim")
-
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
@@ -49,7 +37,6 @@ return require("packer").startup(function(use)
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	})
-
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {
@@ -62,7 +49,6 @@ return require("packer").startup(function(use)
 			end,
 		}),
 	})
-
 	use({
 		"glepnir/dashboard-nvim",
 		event = "VimEnter",
@@ -73,16 +59,12 @@ return require("packer").startup(function(use)
 		end,
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
-
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-
 	use({ "wesQ3/vim-windowswap", requires = { "kana/vim-submode" } })
-
 	use("sbdchd/neoformat")
-
 	use({
 		"folke/which-key.nvim",
 		config = function()

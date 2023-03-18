@@ -14,4 +14,4 @@ vim.opt.backup = false
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd('colorscheme tokyonight')
