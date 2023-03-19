@@ -3,6 +3,7 @@ local lsp = require("lsp-zero").preset({
 	set_lsp_keymaps = true,
 	manage_nvim_cmp = true,
 	suggest_lsp_servers = true,
+	virtual_text = false,
 })
 
 lsp.ensure_installed({
@@ -13,6 +14,7 @@ lsp.ensure_installed({
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
+	vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
 	vim.keymap.set("n", "<leader>gd", function()
 		vim.lsp.buf.definition()
 	end, opts)
