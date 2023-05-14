@@ -6,14 +6,23 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+	use("tpope/vim-fugitive")
+	use("jparise/vim-graphql")
+	use({ "nyoom-engineering/oxocarbon.nvim" })
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 	use("github/copilot.vim")
+	use("EdenEast/nightfox.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	use("folke/tokyonight.nvim")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use({
 		"VonHeikemen/lsp-zero.nvim",
@@ -139,4 +148,18 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+	-- debugging
+	use({ "mfussenegger/nvim-dap" })
+	use({ "nvim-telescope/telescope-dap.nvim" })
+	use({ "mfussenegger/nvim-dap-python" })
+	use({ "theHamsta/nvim-dap-virtual-text" })
+	use({ "rcarriga/nvim-dap-ui" })
+	use({ "Pocco81/DAPInstall.nvim" })
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
 end)

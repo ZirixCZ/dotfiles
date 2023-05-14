@@ -13,7 +13,8 @@ lsp.ensure_installed({
 
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
-
+	-- disables lua line
+	vim.diagnostic.config({ virtual_lines = true })
 	vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
 	vim.keymap.set("n", "<leader>gd", function()
 		vim.lsp.buf.definition()

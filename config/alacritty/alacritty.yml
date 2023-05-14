@@ -19,3 +19,6 @@ font:
     style: Bold Italic
 
   size: 14
+
+  env:
+    TERM: xterm-256color
