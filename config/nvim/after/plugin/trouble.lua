@@ -1,5 +1,5 @@
 require("trouble").setup({
-	use_lsp_diagnostic_signs = true,
+	use_diagnostic_signs = true,
 })
 
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })

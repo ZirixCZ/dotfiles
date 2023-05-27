@@ -6,7 +6,15 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+	use({ "edluffy/hologram.nvim" })
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	use("tpope/vim-fugitive")
+	use("kdheepak/lazygit.nvim")
 	use("jparise/vim-graphql")
 	use({ "nyoom-engineering/oxocarbon.nvim" })
 	use({
@@ -74,6 +82,18 @@ return require("packer").startup(function(use)
 	})
 	use({ "wesQ3/vim-windowswap", requires = { "kana/vim-submode" } })
 	use("sbdchd/neoformat")
+	use({
+		"utilyre/barbecue.nvim",
+		tag = "*",
+		requires = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		after = "nvim-web-devicons", -- keep this if you're using NvChad
+		config = function()
+			require("barbecue").setup()
+		end,
+	})
 	use({
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
