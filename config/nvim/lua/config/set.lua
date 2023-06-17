@@ -31,3 +31,19 @@ vim.opt.list = true
 vim.opt.listchars = "tab:→ ,eol:¬,space:·,trail:•,extends:⟩,precedes:⟨"
 
 vim.api.nvim_set_keymap("n", "<leader>z", ":set list!<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>sm", "<cmd>Telescope media_files<CR>", { noremap = true, silent = true })
+
+local isEnabled = true
+function diagnostic_toggle()
+	if isEnabled then
+		vim.diagnostic.hide()
+		isEnabled = false
+	else
+		vim.diagnostic.show()
+		isEnabled = true
+	end
+end
+
+vim.keymap.set("n", "<leader>l", function()
+	diagnostic_toggle()
+end, { noremap = true, silent = true })

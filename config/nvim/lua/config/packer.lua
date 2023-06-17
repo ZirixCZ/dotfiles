@@ -31,6 +31,9 @@ return require("packer").startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+	use("nvim-telescope/telescope-media-files.nvim")
+	use("nvim-lua/popup.nvim")
+	use("nvim-lua/plenary.nvim")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use({
 		"VonHeikemen/lsp-zero.nvim",
@@ -151,12 +154,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	})
-	use({
 		"folke/which-key.nvim",
 		config = function()
 			vim.o.timeout = true
@@ -174,6 +171,12 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
+	use({
+		"RRethy/vim-illuminate",
+		config = function()
+			require("illuminate").configure({})
+		end,
+	})
 	-- debugging
 	use({ "mfussenegger/nvim-dap" })
 	use({ "nvim-telescope/telescope-dap.nvim" })
@@ -182,4 +185,11 @@ return require("packer").startup(function(use)
 	use({ "rcarriga/nvim-dap-ui" })
 	use({ "Pocco81/DAPInstall.nvim" })
 	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+	})
 end)
