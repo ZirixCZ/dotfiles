@@ -1,5 +1,2 @@
-if vim.g.vscode then
-else
-	-- ordinary Neovim
-	require("config")
-end
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

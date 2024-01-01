@@ -7,11 +7,13 @@ font:
     family: FiraMono Nerd Font
     style: Bold
 
-  size: 12.0
+  size: 14.0
 
 selection:
   save_to_clipboard: true
 window:
+  opacity: 0.9
+  decorations: "None"
   padding:
     x: 0
     y: 0
@@ -44,3 +46,6 @@ colors:
     magenta: '0xDDB6F2'
     cyan:    '0xA1EFD3'
     white:   '0xF5E0DC'
+
+  env:
+    TERM: xterm-256color
