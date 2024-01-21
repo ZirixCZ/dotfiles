@@ -1,0 +1,50 @@
+[colors.bright]
+black = "0x575268"
+blue = "0x96CDFB"
+cyan = "0xA1EFD3"
+green = "0xABE9B3"
+magenta = "0xDDB6F2"
+red = "0xF28FAD"
+white = "0xF5E0DC"
+yellow = "0xFAE3B0"
+
+[colors.normal]
+black = "0x302D41"
+blue = "0x96CDFB"
+cyan = "0xA1EFD3"
+green = "0xABE9B3"
+magenta = "0xDDB6F2"
+red = "0xF28FAD"
+white = "0xD9E0EE"
+yellow = "0xFAE3B0"
+
+[colors.primary]
+background = "0x141414"
+foreground = "0xdadada"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "FiraMono Nerd Font"
+style = "Bold"
+
+[font.normal]
+family = "FiraMono Nerd Font"
+style = "Medium"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+blur = true
+decorations = "None"
+opacity = 0.75
+
+[window.dimensions]
+columns = 80
+lines = 24
+
+[window.padding]
+x = 0
+y = 0
