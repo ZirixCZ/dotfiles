@@ -1,0 +1,22 @@
+@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css");
+
+* {
+  --background-primary: #141414;
+  --background-mobile-primary: #141414;
+  --chat-background: #141414;
+  --chat-input-container-background: #141414;
+  --status-danger-text: #141414;
+  -status-positive-text: #141414;
+  --status-warning-text: #141414;
+  --button-outline-danger-text-hover: #141414;
+  --button-outline-positive-text-hover: #141414;
+  --button-outline-danger-text-active: #141414;
+  --button-outline-positive-text-active: #141414;
+  --button-outline-brand-text-hover: #141414;
+  --modal-background: #141414;
+
+  --background-secondary: #0d0c0c;
+  --background-nested-floating: #0d0c0c;
+  --background-mobile-secondary: #0d0c0c;
+  --channeltextarea-background: #0d0c0c;
+}
