@@ -2,6 +2,11 @@
 ### Welcome to the .files - the folder-y place where everything is perfectly configured to file your needs.
 Feel free to take what you need, and if you have any questions, don't be shy to open an issue or drop me an email.
 
+# Overview
+The `/rices` directory includes my past rices that I no longer use. `/config` contains my current`~/.config` directory.
+
+# Past rices
+
 ## TokyoNight
 ![tokyonightscreenshot1](https://user-images.githubusercontent.com/49836430/226100248-3870901e-1172-459f-a6dc-d02800d616f4.png)
 
