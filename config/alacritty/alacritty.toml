@@ -38,7 +38,7 @@ save_to_clipboard = true
 
 [window]
 blur = true
-decorations = "None"
+decorations = "Buttonless"
 opacity = 0.75
 
 [window.dimensions]
@@ -46,5 +46,8 @@ columns = 80
 lines = 24
 
 [window.padding]
-x = 0
-y = 0
+x = 10
+y = 10
+
+[scrolling]
+history = 0
