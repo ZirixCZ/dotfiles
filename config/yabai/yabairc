@@ -31,7 +31,7 @@ yabai -m config normal_window_opacity 1.0
 
 ## WTIH SIP DISABLED (Limelight build into Yabai, enable it here)
 yabai -m config window_border off
-yabai -m config window_border_width 2
+yabai -m config window_border_width 0
 yabai -m config active_window_border_color 0xFFcba6f7
 yabai -m config normal_window_border_color 0x00FFFFFF
 yabai -m config insert_feedback_color 0xffd75f5f
@@ -64,7 +64,7 @@ yabai -m config window_animation_duration 0.15
 
 yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
 
-borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=6.0 style=round &
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=4.0 style=round &
 
 echo "yabai configuration loaded.."
 

@@ -5,3 +5,4 @@
 -- leader g b :Git blame
 
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame_line<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>]", ":Gen<CR>")

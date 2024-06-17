@@ -1,4 +1,5 @@
 return {
+  -- For Eslint I've got to enable it in :LazyExtras
   -- COLOR SCHEME/THEME
   {
     "catppuccin/nvim",
@@ -36,7 +37,42 @@ return {
           types = {},
           operators = {},
         },
-        color_overrides = {},
+        color_overrides = {
+          all = {
+            -- base = "#282c34",
+            -- mantle = "#353b45",
+            -- surface0 = "#3e4451",
+            -- surface1 = "#545862",
+            -- surface2 = "#565c64",
+            -- text = "#abb2bf",
+            -- rosewater = "#b6bdca",
+            -- lavender = "#c8ccd4",
+            -- red = "#e06c75",
+            -- peach = "#d19a66",
+            -- yellow = "#e5c07b",
+            -- green = "#c9e6b3",
+            -- teal = "#56b6c2",
+            -- blue = "#5896FE",
+            -- mauve = "#f4a994",
+            -- flamingo = "#be5046",
+            --
+            -- -- now patching extra palettes
+            -- maroon = "#e06c75",
+            -- sky = "#d19a66",
+            --
+            -- -- extra colors not decided what to do
+            -- pink = "#F5C2E7",
+            -- sapphire = "#74C7EC",
+            --
+            -- subtext1 = "#BAC2DE",
+            -- subtext0 = "#A6ADC8",
+            -- overlay2 = "#9399B2",
+            -- overlay1 = "#7F849C",
+            -- overlay0 = "#6C7086",
+            --
+            -- crust = "#11111B",
+          },
+        },
         custom_highlights = {},
         integrations = {
           cmp = true,
@@ -54,10 +90,92 @@ return {
     end,
   },
 
+  -- DEV
+  { "MunifTanjim/nui.nvim" },
+  {
+    "ZirixCZ/nvimai",
+    opts = {
+      integration = "ollama",
+      openai = {
+        model = "gpt-3.5-turbo-0125",
+        max_tokens = 100,
+      },
+      ollama = {
+        model = "curiosity",
+      },
+    },
+  },
+
   {
     "ellisonleao/gruvbox.nvim",
     opts = {
       transparent_mode = true,
+    },
+  },
+
+  -- AI GEN
+
+  -- Custom Parameters (with defaults)
+  {
+    "David-Kunz/gen.nvim",
+    opts = {
+      model = "dolphincoder", -- The default model to use.
+      host = "localhost", -- The host running the Ollama service.
+      port = "11434", -- The port on which the Ollama service is listening.
+      quit_map = "q", -- set keymap for close the response window
+      retry_map = "<c-r>", -- set keymap to re-send the current prompt
+      init = function(options)
+        pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
+      end,
+      -- Function to initialize Ollama
+      command = function(options)
+        local body = { model = "dolphincoder", stream = true }
+        return "curl --silent --no-buffer -X POST http://"
+          .. options.host
+          .. ":"
+          .. options.port
+          .. "/api/chat -d $body"
+      end,
+      -- The command for the Ollama service. You can use placeholders $prompt, $model and $body (shellescaped).
+      -- This can also be a command string.
+      -- The executed command must return a JSON object with { response, context }
+      -- (context property is optional).
+      -- list_models = '<omitted lua function>', -- Retrieves a list of model names
+      display_mode = "split", -- The display mode. Can be "float" or "split".
+      show_prompt = false, -- Shows the prompt submitted to Ollama.
+      show_model = false, -- Displays which model you are using at the beginning of your chat session.
+      no_auto_close = false, -- Never closes the window automatically.
+      debug = false, -- Prints errors and the command which is run.
+    },
+  },
+
+  -- {
+  --   "huggingface/llm.nvim",
+  --   config = function()
+  --     require("llm").setup({
+  --       model = "zephyr",
+  --       backend = "ollama",
+  --       url = "http://localhost:11434/api/generate",
+  --       -- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
+  --       request_body = {
+  --         -- Modelfile options for the model you use
+  --         options = {
+  --           temperature = 0.2,
+  --           top_p = 0.95,
+  --         },
+  --       },
+  --       lsp = {
+  --         bin_path = vim.api.nvim_call_function("stdpath", { "data" }) .. "/mason/bin/llm-ls",
+  --       },
+  --     })
+  --   end,
+  -- },
+  --
+  -- COLORSCHEME
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
     },
   },
 
@@ -67,13 +185,6 @@ return {
     "rcarriga/nvim-notify",
     opts = {
       background_colour = "#000000",
-    },
-  },
-
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
     },
   },
 
@@ -120,6 +231,7 @@ return {
           -- stylua: ignore
           vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
+          vim.keymap.set("n", "<leader>cr", "TypescriptRename", { desc = "Rename", buffer = buffer })
         end)
       end,
     },
@@ -135,6 +247,7 @@ return {
         cssls = {},
         pyright = {},
         rust_analyzer = {},
+        phpactor = {},
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -155,6 +268,14 @@ return {
         -- ["*"] = function(server, opts) end,
       },
     },
+  },
+
+  {
+    "akinsho/flutter-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("flutter-tools").setup({})
+    end,
   },
 
   -- TREESITTER
@@ -191,8 +312,8 @@ return {
       require("presence").setup({
         -- General options
         auto_update = true, -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
-        neovim_image_text = "League of Legends", -- Text displayed when hovered over the Neovim image
-        main_image = "https://raw.githubusercontent.com/github/explore/b088bf18ff2af3f2216294ffb10f5a07eb55aa31/topics/league-of-legends/league-of-legends.png", -- Main image display (either "neovim" or "file")
+        neovim_image_text = "Nerdy text editor", -- Text displayed when hovered over the Neovim image
+        main_image = "https://i.imgur.com/Oyc9Ukl.jpeg", -- Main image display (either "neovim" or "file")
         --client_id = "793271441293967371", -- Use your own Discord application client id (not recommended)
         log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
         debounce_timeout = 10, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
@@ -200,14 +321,14 @@ return {
         blacklist = {}, -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
         buttons = false, -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
         file_assets = {}, -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
-        show_time = true, -- Show the timer
+        show_time = false, -- Show the timer
 
         -- Rich Presence text options
-        editing_text = "In Queue", -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
-        file_explorer_text = "In Queue", -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
-        git_commit_text = "In Queue", -- Format string rendered when committing changes in git (either string or function(filename: string): string)
-        plugin_manager_text = "In Queue", -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
-        reading_text = "In Queue", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
+        editing_text = "", -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
+        file_explorer_text = "", -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
+        git_commit_text = "", -- Format string rendered when committing changes in git (either string or function(filename: string): string)
+        plugin_manager_text = "", -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
+        reading_text = "", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
         workspace_text = "", -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
         line_number_text = "",
       })
@@ -297,6 +418,53 @@ return {
         end,
         desc = "harpoon to file 5",
       },
+    },
+  },
+
+  -- PRETTIER
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["javascript"] = { "prettier" },
+        ["javascriptreact"] = { "prettier" },
+        ["typescript"] = { "prettier" },
+        ["typescriptreact"] = { "prettier" },
+        ["vue"] = { "prettier" },
+        ["css"] = { "prettier" },
+        ["scss"] = { "prettier" },
+        ["less"] = { "prettier" },
+        ["html"] = { "prettier" },
+        ["json"] = { "prettier" },
+        ["jsonc"] = { "prettier" },
+        ["yaml"] = { "prettier" },
+        ["markdown"] = { "prettier" },
+        ["markdown.mdx"] = { "prettier" },
+        ["graphql"] = { "prettier" },
+        ["handlebars"] = { "prettier" },
+      },
+    },
+  },
+
+  -- phpactor
+  {
+    "phpactor/phpactor",
+    init = function()
+      vim.g.phpactor_phpactor_path = "/usr/local/bin/phpactor"
+    end,
+  },
+
+  -- buferline
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = { position = "right", width = 65 },
     },
   },
 }
