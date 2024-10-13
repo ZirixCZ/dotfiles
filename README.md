@@ -8,13 +8,15 @@ Feel free to take what you need, and if you have any questions, don't be shy to 
 
 The [/rices](https://github.com/ZirixCZ/dotfiles/tree/main/rices) directory includes my rices categorized. [/misc](https://github.com/ZirixCZ/dotfiles/tree/main/misc) contains various configuration files for all kind of software that isn't inherently linked to any particular rice. Feel free to check it out, but what you'll be interested in is most likely one of the rice directories.
 
+[Link to the latest rice configuration files](https://github.com/ZirixCZ/dotfiles/tree/main/rices/macos/Oxocarbon)
+
 # Getting started with ricing
 
 So you've decided to give it a shot, heh? Let's do it then! I'll do a little rundown of the things that I use ^^ Oh and by the way, do not erase any configs from your machine! The easiest thing you can do is `mv` instead of `rm` to test things out!
 
 ##### Terminal emulator
 
-I just like Alacritty. Install it for your machine and copy the [alacritty.toml](https://github.com/ZirixCZ/dotfiles/blob/main/misc/alacritty/alacritty.toml) frthe misc directory. You'll want to tweak the settings a bit to match your likings. [Mainly the decorations](https://alacritty.org/config-alacritty.html).
+I just like Alacritty. Install it for your machine and copy the [alacritty.toml](https://github.com/ZirixCZ/dotfiles/blob/main/misc/alacritty/alacritty.toml) from the misc directory. You'll want to tweak the settings a bit to match your likings. [Mainly the decorations](https://alacritty.org/config-alacritty.html).
 
 ##### Text editor
 
