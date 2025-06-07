@@ -1,0 +1,16 @@
+add ./
+set continue=true
+bind -f common C toggle continue
+q
+bind common <key> win-page-bottom
+update ./
+update
+qa
+live-filter 
+quit
+./
+add /
+add
+add .
+exit
+help

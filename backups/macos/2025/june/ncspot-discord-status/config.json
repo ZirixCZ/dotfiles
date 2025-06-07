@@ -1,0 +1,11 @@
+{
+  "clientId": "1225528406754721842",
+  "port": 8888,
+  "host": "localhost",
+  "loadText": "Listening to music",
+  "preTrackText": "Listening to ",
+  "activity": {
+    "largeImageKey": "https://dashboard.snapcraft.io/site_media/appmedia/2023/12/logo.svg.png",
+    "largeImageText": "Terminal music player"
+  }
+}

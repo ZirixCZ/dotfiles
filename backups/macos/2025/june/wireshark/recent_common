@@ -1,0 +1,85 @@
+# Common recent settings file for Wireshark 4.4.3.
+#
+# This file is regenerated each time Wireshark is quit
+# and when changing configuration profile.
+# So be careful, if you want to make manual changes here.
+
+######## Recent capture files (latest last), cannot be altered through command line ########
+
+recent.capture_file: /Users/smartbook/Downloads/capture.pcap
+
+######## Recent capture filters (latest first), cannot be altered through command line ########
+
+
+######## Recent display filters (latest last), cannot be altered through command line ########
+
+
+# Main window geometry.
+# Decimal numbers.
+gui.geometry_main_x: 850
+gui.geometry_main_y: 50
+gui.geometry_main_width: 810
+gui.geometry_main_height: 952
+
+# Main window maximized.
+# true or false (case-insensitive).
+gui.geometry_main_maximized: false
+
+# Main window geometry state.
+# Hex byte string.
+gui.geometry_main: 01d9d0cb0003000000000352000000320000067b00000405000003520000004e0000067b0000040500000000000000000690000003520000004e0000067b00000405
+
+# Leftalign Action Buttons.
+# true or false (case-insensitive).
+gui.geometry_leftalign_actions: false
+
+# Last used Configuration Profile.
+gui.last_used_profile: Default
+
+# Number of packets or events to check for automatic profile switching.
+# Decimal number. Zero disables switching.
+#gui.profile_switch_check_count: 1000
+
+# Warn if running with elevated permissions (e.g. as root).
+# true or false (case-insensitive).
+privs.warn_if_elevated: true
+
+# Warn if Wireshark is unable to capture.
+# true or false (case-insensitive).
+sys.warn_if_no_capture: true
+
+# Find packet search in.
+# One of: PACKET_LIST, PACKET_DETAILS, PACKET_BYTES
+gui.search_in: PACKET_LIST
+
+# Find packet character set.
+# One of: NARROW_AND_WIDE, NARROW, WIDE
+gui.search_char_set: NARROW_AND_WIDE
+
+# Find packet case sensitive search.
+# true or false (case-insensitive).
+gui.search_case_sensitive: false
+
+# Find packet search reverse direction.
+# true or false (case-insensitive).
+gui.search_reverse_dir: false
+
+# Find packet search multiple occurrences.
+# true or false (case-insensitive).
+gui.search_multiple_occurs: false
+
+# Find packet search type.
+# One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
+gui.search_type: DISPLAY_FILTER
+
+# Custom colors.
+# List of custom colors selected in Qt color picker.
+gui.custom_colors: 
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff"
