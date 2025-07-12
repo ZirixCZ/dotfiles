@@ -21,6 +21,26 @@
 (setq package-enable-at-startup nil)
 (setq straight-use-package-by-default t) 
 
+(use-package consult
+  :hook (completion-list-mode . consult-preview-at-point-mode)
+  :bind
+  (("M-g M-g" . consult-goto-line)
+   ("M-s M-d" . consult-fd)
+   ("M-s M-r" . consult-ripgrep)
+   ("C-y" . consult-yank-from-kill-ring)
+   ("M-g M-f" . consult-flymake)
+   ("M-g M-e" . consult-imenu)
+   ("C-s" . consult-line)))
+
+
+(use-package treesit-auto
+  :commands global-treesit-auto-mode
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode +1))
+
 (defun wp-p ()
   (interactive)
   (let ((file (thing-at-point 'filename t)))
